@@ -428,38 +428,9 @@ p, a {
 <div class="orb" style="left:70%; animation-delay:36s;"></div>
 <div class="orb" style="left:85%; animation-delay:40s;"></div>
 
-
-/* Animation subtile de respiration énergétique */
-@keyframes breathe {
-    0% {
-        transform: scale(1) translate(0, 0);
-        opacity: 0.8;
-    }
-    50% {
-        transform: scale(1.05) translate(2%, 2%);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.1) translate(-2%, -2%);
-        opacity: 0.9;
-    }
-}
-
 p {
   color: rgba(255,255,255,0.92);
   text-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
-
-.light-orbs {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-    mix-blend-mode: screen; /* 👉 tu peux la remettre ici */
 }
 
 h2, h3 {
@@ -468,6 +439,68 @@ h2, h3 {
 
 @media (max-width: 768px) {
   .header { padding: 10px 15px; }
+}
+/* ======================================= */
+/* 🌠 BULLES DE LUMIÈRE – VERSION POUSSIÈRE D'ÉTOILES */
+/* ======================================= */
+.light-orbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* ✨ Petites particules lumineuses */
+.orb {
+  position: absolute;
+  bottom: -10vh;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,223,166,0.35) 0%, rgba(255,223,166,0) 70%);
+  opacity: 0.25;
+  animation: riseStars linear infinite;
+  filter: blur(1px);
+}
+
+/* 🌸 Variation naturelle : taille + couleur + vitesse */
+.orb:nth-child(3n) {
+  background: radial-gradient(circle, rgba(122,199,164,0.35) 0%, rgba(122,199,164,0) 70%);
+  width: 6px; height: 6px;
+  animation-duration: 50s;
+}
+.orb:nth-child(4n) {
+  background: radial-gradient(circle, rgba(142,68,173,0.35) 0%, rgba(142,68,173,0) 70%);
+  width: 4px; height: 4px;
+  animation-duration: 60s;
+}
+.orb:nth-child(5n) {
+  background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 70%);
+  width: 3px; height: 3px;
+  animation-duration: 45s;
+}
+.orb:nth-child(6n) {
+  background: radial-gradient(circle, rgba(255,223,166,0.6) 0%, rgba(255,223,166,0) 70%);
+  width: 5px; height: 5px;
+  animation-duration: 55s;
+}
+
+/* 🌬 Animation ascendante continue */
+@keyframes riseStars {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.3; }
+  50% { transform: translateY(40vh) translateX(20px); opacity: 0.5; }
+  90% { opacity: 0.25; }
+  100% {
+    transform: translateY(-20vh) translateX(-20px);
+    opacity: 0;
+  }
 }
 
 
