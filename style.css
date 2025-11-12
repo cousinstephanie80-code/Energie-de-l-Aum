@@ -421,59 +421,12 @@ p, a {
     filter: blur(60px);
 }
 
-/* ======================================= */
-/* ✨ BULLES DE LUMIÈRE ÉNERGÉTIQUES – VERSION ZEN */
-/* ======================================= */
-.light-orbs {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-/* Bulles équilibrées et lentes */
-.orb {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    background: radial-gradient(circle, rgba(255,223,166,0.7) 0%, rgba(255,223,166,0) 70%);
-    border-radius: 50%;
-    opacity: 0.55;
-    animation: floatUp 22s linear infinite;
-}
-
-/* Couleur douce alternée */
-.orb:nth-child(2n) {
-    background: radial-gradient(circle, rgba(142,68,173,0.4) 0%, rgba(142,68,173,0) 70%);
-}
-
-/* Animation fluide et constante */
-@keyframes floatUp {
-    0% {
-        transform: translateY(110vh) scale(1);
-        opacity: 0.2;
-    }
-    25% {
-        transform: translateY(75vh) scale(1.05);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateY(40vh) scale(1.1);
-        opacity: 0.7;
-    }
-    75% {
-        transform: translateY(10vh) scale(1.05);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(-20vh) scale(1);
-        opacity: 0.2;
-    }
-}
+<div class="orb" style="left:10%; animation-delay:0s;"></div>
+...
+<div class="orb" style="left:95%; animation-delay:28s;"></div>
+<div class="orb" style="left:40%; animation-delay:32s;"></div>
+<div class="orb" style="left:70%; animation-delay:36s;"></div>
+<div class="orb" style="left:85%; animation-delay:40s;"></div>
 
 
 /* Animation subtile de respiration énergétique */

@@ -170,13 +170,23 @@
   <p style="margin-top: 15px;">© 2025 ÉNERGIE DE L’AUM – Tous droits réservés.</p>
 </footer>
 
+<!-- Fond énergétique animé -->
+<div class="animated-background"></div>
 
- <!-- 🌿 SCRIPT : Menu hamburger & apparition -->
+<!-- ✨ Bulles lumineuses zen -->
+<div class="light-orbs">
+  <div class="orb" style="left:10%; animation-delay:0s;"></div>
+  <div class="orb" style="left:30%; animation-delay:4s;"></div>
+  <div class="orb" style="left:50%; animation-delay:8s;"></div>
+  <div class="orb" style="left:70%; animation-delay:12s;"></div>
+  <div class="orb" style="left:90%; animation-delay:16s;"></div>
+</div>
+
+<!-- 🌿 SCRIPT : Menu hamburger & apparition -->
 <script>
   // --- Menu mobile ---
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav ul');
-
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('active');
@@ -184,8 +194,8 @@
     });
   }
 
-  // --- Apparition au scroll ---
-  const fadeElements = document.querySelectorAll('.fade-section');
+  // --- Apparition des sections au scroll (reveal + fade-section) ---
+  const fadeElements = document.querySelectorAll('.fade-section, .reveal');
   const appearOnScroll = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -193,49 +203,6 @@
   }, { threshold: 0.2 });
   fadeElements.forEach(el => appearOnScroll.observe(el));
 </script>
-
-
-
-    // --- Apparition au scroll ---
-    const fadeElements = document.querySelectorAll('.fade-section');
-    const appearOnScroll = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    fadeElements.forEach(el => appearOnScroll.observe(el));
-  </script>
-<script>
-  // 🌸 Apparition douce des sections au scroll
-  const reveals = document.querySelectorAll('.reveal');
-
-  function revealOnScroll() {
-    for (const element of reveals) {
-      const windowHeight = window.innerHeight;
-      const revealTop = element.getBoundingClientRect().top;
-      const revealPoint = 100; // Distance avant activation
-
-      if (revealTop < windowHeight - revealPoint) {
-        element.classList.add('visible');
-      }
-    }
-  }
-
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // pour activer celles visibles dès le départ
-</script>
-
-<!-- Fond énergétique animé-->
-<div class="animated-background"></div>
-
-<!-- ✨ Bulles lumineuses zen -->
-<div class="light-orbs">
-    <div class="orb" style="left:10%; animation-delay:0s;"></div>
-    <div class="orb" style="left:30%; animation-delay:4s;"></div>
-    <div class="orb" style="left:50%; animation-delay:8s;"></div>
-    <div class="orb" style="left:70%; animation-delay:12s;"></div>
-    <div class="orb" style="left:90%; animation-delay:16s;"></div>
-</div>
 
 </body>
 </html>
