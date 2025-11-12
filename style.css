@@ -266,6 +266,57 @@ p, a {
   transform: scale(1);
 }
 
+/* 💬 SECTION TÉMOIGNAGES – VERSION DOUCE ET HARMONIEUSE */
+:root {
+  --background-light: #F4EDE3; /* 🌿 fond lin légèrement rosé */
+}
+
+/* --- Conteneur principal --- */
+.testimonial-section {
+  position: relative;
+  background: var(--background-light);
+  padding: 90px 20px;
+  text-align: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(212,175,55,0.15);
+  border-bottom: 1px solid rgba(212,175,55,0.15);
+}
+
+/* --- Titre principal --- */
+.section-title {
+  font-family: var(--font-serif);
+  color: var(--color-olive);
+  font-size: 2rem;
+  margin-bottom: 45px;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+/* --- Carrousel principal --- */
+.testimonial-carousel {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto 60px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.testimonial-item {
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+  transform: scale(0.97);
+}
+
+.testimonial-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* --- Carte de témoignage --- */
 .testimonial-box {
   background: #FFFFFFE6;
@@ -386,7 +437,6 @@ p, a {
 }
 
 
-
 /* ========================================== */
 /* 💌 7. CONTACT & FOOTER */
 /* ========================================== */
@@ -492,3 +542,104 @@ p, a {
 #music-toggle i {
   font-size: 1.4rem;
 }
+
+/* ========================================== */
+/* 📱 RESPONSIVE – Témoignages Énergie de l’Aum */
+/* ========================================== */
+
+/* 🌿 Tablette (entre 600 et 1024px) */
+@media (max-width: 1024px) {
+  .testimonial-section {
+    padding: 70px 20px;
+  }
+
+  .testimonial-box {
+    padding: 50px 35px 60px;
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .testimonial-author-block {
+    justify-content: flex-end;
+  }
+
+  .author-photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .testimonial-author {
+    font-size: 1rem;
+  }
+}
+
+/* 🌸 Mobile (moins de 600px) */
+@media (max-width: 600px) {
+  .testimonial-section {
+    padding: 60px 18px;
+  }
+
+  .testimonial-box {
+    text-align: center;
+    padding: 45px 25px 55px;
+  }
+
+  .quote-symbol {
+    position: static;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.3;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding-top: 0;
+  }
+
+  /* Photo et nom centrés sous le texte */
+  .testimonial-author-block {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .author-photo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+  }
+
+  .testimonial-author {
+    font-size: 1.05rem;
+    color: var(--color-lavande);
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+  }
+
+  .cta-title {
+    font-size: 1.3rem;
+  }
+
+  .cta-description {
+    font-size: 0.95rem;
+    margin: 0 auto 20px;
+    max-width: 90%;
+  }
+
+  .btn-primary {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
+
