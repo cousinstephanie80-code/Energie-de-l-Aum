@@ -3,16 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Énergie de l’Aum – Harmonie & Sérénité</title>
+  <title>Énergie de l’Aum – Équilibre & Sérénité</title>
 
-  <!-- 🌸 Polices Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- 🌿 FAVICON (Lotus doré) -->
+  <link rel="icon" type="image/png" href="images/favicon-lotus.png">
 
-  <!-- 🎨 Fichier CSS externe -->
+  <!-- 🌸 BALISES META SEO -->
+  <meta name="description" content="Énergie de l’Aum – Soins énergétiques Reiki, Lahochi et Merkabah, en présentiel ou à distance. Retrouvez équilibre, harmonie et sérénité intérieure grâce à des pratiques douces et lumineuses.">
+  <meta name="keywords" content="Reiki, Lahochi, soins énergétiques, Merkabah, énergie, bien-être, méditation, relaxation, guérison énergétique, chakra, équilibre, sérénité, spiritualité, Énergie de l’Aum, harmonie du corps et de l’esprit">
+  <meta name="author" content="Énergie de l’Aum">
+
+  <!-- 🌞 META OPEN GRAPH (Facebook / WhatsApp) -->
+  <meta property="og:title" content="Énergie de l’Aum – Équilibre & Sérénité">
+  <meta property="og:description" content="Soins énergétiques Reiki, Lahochi et Merkabah – retrouvez paix intérieure, équilibre et lumière.">
+  <meta property="og:image" content="https://energie-de-l-aum.netlify.app/images/hero-aurores-boreales.jpg">
+  <meta property="og:url" content="https://energie-de-l-aum.netlify.app">
+  <meta property="og:type" content="website">
+
+  <!-- 🕊 META TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Énergie de l’Aum – Reiki & Harmonie">
+  <meta name="twitter:description" content="Soins énergétiques Reiki, Lahochi et Merkabah – équilibre du corps et de l’esprit.">
+  <meta name="twitter:image" content="https://energie-de-l-aum.netlify.app/images/hero-aurores-boreales.jpg">
+
+<!-- ✨ STYLE PRINCIPAL OPTIMISÉ -->
+<link rel="preload" href="style.min.css" as="style">
+<link rel="stylesheet" href="style.min.css" media="all">
+
+<!-- 🕊️ Fallback (si le navigateur ne charge pas le minifié) -->
+<noscript>
   <link rel="stylesheet" href="style.css">
+</noscript>
 
-  <!-- 🌼 Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+<!-- 🎨 Couleur du thème pour la barre du navigateur mobile -->
+<meta name="theme-color" content="#1A2A3A">
+
+
+  <!-- 🎨 POLICES & STYLE -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="style.min.css" as="style">
+<link rel="stylesheet" href="style.min.css">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
+
+
+  <!-- 📱 COULEUR DU NAVIGATEUR MOBILE -->
+  <meta name="theme-color" content="#1A2A3A">
 </head>
 
 <body>
@@ -40,7 +75,7 @@
   </header>
 
   <!-- 🌸 HERO -->
-  <section class="hero">
+  <section class="hero reveal">
     <div class="hero-content">
       <h1 class="fade-gold">ÉNERGIE DE L’AUM</h1>
       <p class="intro">Bienvenue dans un espace où l’énergie circule, la lumière apaise et l’âme s’équilibre.</p>
@@ -50,7 +85,7 @@
   </section>
 
   <!-- 🌿 SECTION MISSION -->
-  <section class="section-mission">
+  <section class="section-mission reveal">
     <div class="container fade-section">
       <h2>Notre Mission : L’harmonie du corps et de l’esprit</h2>
       <p class="mission-text">
@@ -61,12 +96,12 @@
   </section>
 
   <!-- ✨ CITATION -->
-  <section class="section-quote fade-section">
+  <section class="section-quote fade-section reveal">
     <blockquote>« L’énergie qui nous traverse est la première médecine de l’âme. »</blockquote>
   </section>
 
   <!-- 🌸 SERVICES -->
-  <section class="section-services">
+  <section class="section-services reveal">
     <div class="container fade-section">
       <h2>Nos soins énergétiques</h2>
       <p class="subtitle">Explorez nos pratiques pour retrouver équilibre, vitalité et clarté intérieure.</p>
@@ -100,7 +135,7 @@
   </section>
 
   <!-- 🌿 TÉMOIGNAGES -->
-  <section class="section-temoignage fade-section">
+  <section class="section-temoignage fade-section reveal">
     <div class="container">
       <h2>Ils nous font confiance</h2>
       <p class="quote">« Dès la première séance, j’ai ressenti une paix profonde. L’énergie du lieu et la bienveillance du soin m’ont rééquilibrée. »<br>— <em>Une cliente apaisée</em></p>
@@ -108,7 +143,7 @@
   </section>
 
   <!-- 💌 CONTACT & RÉSERVATION -->
-  <section class="section-contact fade-section">
+  <section class="section-contact fade-section reveal">
     <div class="container">
       <h2>Besoin d’un moment pour vous ?</h2>
       <p>Laissez-vous guider vers votre prochain soin énergétique. Prenez rendez-vous dès aujourd’hui.</p>
@@ -120,28 +155,44 @@
     </div>
   </section>
 
-  <!-- 🌸 FOOTER -->
-  <footer class="footer">
-    <div class="social-links">
-      <a href="#" class="social-icon" aria-label="Facebook">
-        <img src="images/icones/facebook.svg" alt="Facebook">
-      </a>
-      <a href="#" class="social-icon" aria-label="Instagram">
-        <img src="images/icones/instagram.svg" alt="Instagram">
-      </a>
-    </div>
-    <p class="footer-text">© 2025 Énergie de l’Aum — Tous droits réservés.</p>
-  </footer>
+ <!-- 🌸 FOOTER -->
+<footer class="footer reveal">
+  <div class="social-links">
+    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+  <p style="margin-top: 15px;">© 2025 ÉNERGIE DE L’AUM – Tous droits réservés.</p>
+</footer>
 
-  <!-- 🌿 SCRIPT : Menu hamburger & apparition -->
-  <script>
-    // --- Menu mobile ---
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav ul');
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/2d3b5c5c6a.js" crossorigin="anonymous"></script>
+
+
+ <!-- 🌿 SCRIPT : Menu hamburger & apparition -->
+<script>
+  // --- Menu mobile ---
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav ul');
+
+  if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       hamburger.classList.toggle('open');
     });
+  }
+
+  // --- Apparition au scroll ---
+  const fadeElements = document.querySelectorAll('.fade-section');
+  const appearOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  fadeElements.forEach(el => appearOnScroll.observe(el));
+</script>
+
+
 
     // --- Apparition au scroll ---
     const fadeElements = document.querySelectorAll('.fade-section');
@@ -152,6 +203,37 @@
     }, { threshold: 0.2 });
     fadeElements.forEach(el => appearOnScroll.observe(el));
   </script>
+<script>
+  // 🌸 Apparition douce des sections au scroll
+  const reveals = document.querySelectorAll('.reveal');
+
+  function revealOnScroll() {
+    for (const element of reveals) {
+      const windowHeight = window.innerHeight;
+      const revealTop = element.getBoundingClientRect().top;
+      const revealPoint = 100; // Distance avant activation
+
+      if (revealTop < windowHeight - revealPoint) {
+        element.classList.add('visible');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // pour activer celles visibles dès le départ
+</script>
+
+<!-- Fond énergétique animé-->
+<div class="animated-background"></div>
+
+<!-- ✨ Bulles lumineuses zen -->
+<div class="light-orbs">
+    <div class="orb" style="left:10%; animation-delay:0s;"></div>
+    <div class="orb" style="left:30%; animation-delay:4s;"></div>
+    <div class="orb" style="left:50%; animation-delay:8s;"></div>
+    <div class="orb" style="left:70%; animation-delay:12s;"></div>
+    <div class="orb" style="left:90%; animation-delay:16s;"></div>
+</div>
 
 </body>
 </html>
