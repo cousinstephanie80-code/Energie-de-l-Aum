@@ -49,6 +49,31 @@
   <meta name="theme-color" content="#1A2A3A">
 </head>
 
+<!-- 🎶 MUSIQUE D’AMBIANCE ZEN -->
+<audio id="bg-music" src="audio/musique-zen.mp3" loop></audio>
+
+<!-- 🔈 Bouton d’activation du son -->
+<div id="music-toggle" title="Activer / Couper la musique">
+  <i class="fa-solid fa-volume-xmark"></i>
+</div>
+
+<script>
+  const bgMusic = document.getElementById('bg-music');
+  const toggleBtn = document.getElementById('music-toggle');
+  let isPlaying = false;
+
+  toggleBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      bgMusic.pause();
+      toggleBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+    } else {
+      bgMusic.play();
+      toggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
+
 <body>
 
   <!-- 🌿 HEADER -->
