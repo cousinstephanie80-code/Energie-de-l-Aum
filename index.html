@@ -158,13 +158,75 @@
     </div>
   </section>
 
-  <!-- 🌿 TÉMOIGNAGES -->
-  <section class="section-temoignage fade-section reveal">
-    <div class="container">
-      <h2>Ils nous font confiance</h2>
-      <p class="quote">« Dès la première séance, j’ai ressenti une paix profonde. L’énergie du lieu et la bienveillance du soin m’ont rééquilibrée. »<br>— <em>Une cliente apaisée</em></p>
+  <!-- 🌸 SECTION TÉMOIGNAGES FUSIONNÉE -->
+<section class="testimonial-section fade-section reveal">
+  <div class="top-gradient-bg"></div>
+
+  <div class="content-wrapper">
+    <h2 class="section-title">Ils nous font confiance</h2>
+
+    <div class="testimonial-carousel">
+      <div class="carousel-track">
+        <!-- Témoignage 1 -->
+        <div class="testimonial-item active">
+          <div class="testimonial-box">
+            <span class="quote-symbol">“</span>
+            <p class="testimonial-text">
+              Dès la première séance, j’ai ressenti une paix profonde.<br>
+              L’énergie du lieu et la bienveillance du soin m’ont rééquilibrée.
+            </p>
+            <p class="testimonial-author">— Une cliente apaisée</p>
+            <span class="quote-symbol end">”</span>
+          </div>
+        </div>
+
+        <!-- Témoignage 2 -->
+        <div class="testimonial-item">
+          <div class="testimonial-box">
+            <span class="quote-symbol">“</span>
+            <p class="testimonial-text">
+              Un soin d’une douceur infinie. Je suis ressortie apaisée, centrée, pleine de gratitude.
+            </p>
+            <p class="testimonial-author">— Julie R.</p>
+            <span class="quote-symbol end">”</span>
+          </div>
+        </div>
+
+        <!-- Témoignage 3 -->
+        <div class="testimonial-item">
+          <div class="testimonial-box">
+            <span class="quote-symbol">“</span>
+            <p class="testimonial-text">
+              Une expérience lumineuse et bienfaisante, un vrai moment de reconnexion.
+            </p>
+            <p class="testimonial-author">— Marc D.</p>
+            <span class="quote-symbol end">”</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+      </div>
     </div>
-  </section>
+
+    <!-- 🌿 CALL TO ACTION -->
+    <div class="call-to-action">
+      <h3 class="cta-title">Besoin d’un moment pour vous ?</h3>
+      <p class="cta-description">
+        Laissez-vous guider vers votre prochain soin énergétique.<br>
+        Prenez rendez-vous dès aujourd’hui.
+      </p>
+      <a href="planning.html" class="btn-primary">PRENDRE RENDEZ-VOUS</a>
+      <p class="cta-contact">
+        ou écrivez-nous : <a href="mailto:energie.aum@gmail.com">energie.aum@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
 
   <!-- 💌 CONTACT & RÉSERVATION -->
   <section class="section-contact fade-section reveal">
@@ -255,6 +317,32 @@
   }, { threshold: 0.2 });
   fadeElements.forEach(el => appearOnScroll.observe(el));
 </script>
+
+<script>
+  const testimonials = document.querySelectorAll('.testimonial-item');
+  const indicators = document.querySelectorAll('.indicator');
+  let index = 0;
+
+  function showSlide(i) {
+    testimonials.forEach((t, idx) => {
+      t.classList.toggle('active', idx === i);
+      indicators[idx].classList.toggle('active', idx === i);
+    });
+  }
+
+  indicators.forEach((ind, i) => {
+    ind.addEventListener('click', () => {
+      index = i;
+      showSlide(index);
+    });
+  });
+
+  setInterval(() => {
+    index = (index + 1) % testimonials.length;
+    showSlide(index);
+  }, 8000);
+</script>
+
 
 </body>
 </html>

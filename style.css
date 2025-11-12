@@ -200,55 +200,147 @@ p, a {
 .card-merkabah { background: url('images/services/merkabah-geometrie.jpg') center/cover; }
 
 /* ========================================== */
-/* 💬 6. CARROUSEL TÉMOIGNAGES */
-/* ========================================== */
-.section-temoignage {
-  background: linear-gradient(to right, #F7F5ED, #E9E3EE);
+/* 🌿 SECTION TÉMOIGNAGES FUSIONNÉE */
+.testimonial-section {
+  position: relative;
+  background: linear-gradient(to bottom, #F7F5ED, #E9E3EE);
   padding: 80px 20px;
   text-align: center;
-  border-radius: 12px;
 }
 
-.carousel {
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
+.section-title {
+  font-family: var(--font-serif);
+  color: var(--color-olive);
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* --- Témoignages --- */
+.testimonial-carousel {
   position: relative;
+  max-width: 850px;
+  margin: 0 auto 50px;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.6s ease;
+  transition: transform 0.8s ease-in-out;
 }
 
-.carousel-item {
+.testimonial-item {
   min-width: 100%;
-  opacity: 0.8;
-  transition: opacity 0.5s ease;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
-.carousel-item.active {
+.testimonial-item.active {
   opacity: 1;
 }
 
-.carousel-nav {
+.testimonial-box {
+  background: #fffdfae6;
+  border: 2px solid rgba(212,175,55,0.4);
+  border-radius: 14px;
+  padding: 40px 30px 50px;
+  margin: 0 auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  position: relative;
+  color: var(--color-olive);
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--color-olive);
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  margin-top: 20px;
+  font-weight: 600;
+  color: var(--color-lavande);
+}
+
+/* Guillemets décoratifs */
+.quote-symbol {
+  font-size: 4rem;
+  color: var(--color-or);
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  opacity: 0.25;
+}
+.quote-symbol.end {
+  bottom: 10px;
+  right: 25px;
+  top: auto;
+  left: auto;
+  opacity: 0.25;
+}
+
+/* --- Indicateurs --- */
+.carousel-indicators {
   margin-top: 20px;
 }
-
-.carousel-nav button {
-  background: var(--color-lavande);
-  border: none;
+.indicator {
+  display: inline-block;
   width: 10px;
   height: 10px;
+  margin: 0 6px;
   border-radius: 50%;
-  margin: 0 5px;
-  opacity: 0.6;
-  transition: opacity 0.3s;
+  background: var(--color-lavande);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.indicator.active {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
-.carousel-nav button.active {
-  opacity: 1;
+/* --- Call to Action --- */
+.call-to-action {
+  margin-top: 50px;
 }
+
+.cta-title {
+  color: var(--color-olive);
+  font-size: 1.6rem;
+  font-family: var(--font-serif);
+  margin-bottom: 20px;
+}
+
+.cta-description {
+  color: var(--color-olive);
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background-color: var(--color-menthe);
+  color: var(--color-olive);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #b2e4cc;
+  transform: translateY(-2px);
+}
+
+.cta-contact a {
+  color: var(--color-lavande);
+  text-decoration: none;
+}
+.cta-contact a:hover {
+  text-decoration: underline;
+}
+
 
 /* ========================================== */
 /* 💌 7. CONTACT & FOOTER */
