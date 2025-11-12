@@ -7,7 +7,7 @@
   --color-lin: #F7F5ED;
   --color-sauge: #7DA07C;        /* sauge profonde */
   --color-sauge-hover: #6B916A;
-  --color-lavande: #A48DBA;      /* lavande plus soutenue */
+  --color-lavande: #A48DBA;      /* lavande soutenue */
   --color-lavande-clair: #CBBED6;
   --color-or: #D4AF37;
   --color-olive: #5E6A4D;
@@ -43,7 +43,6 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
-
 .logo-img { height: 50px; }
 
 .nav ul {
@@ -59,10 +58,7 @@ body {
   font-weight: 600;
   transition: color 0.3s;
 }
-
-.nav ul li a:hover {
-  color: var(--color-or);
-}
+.nav ul li a:hover { color: var(--color-or); }
 
 .hamburger {
   display: none;
@@ -158,19 +154,26 @@ body {
   position: relative;
   max-width: 850px;
   margin: 0 auto 60px;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
 }
 .testimonial-item {
-  opacity: 0;
-  transition: opacity 1.5s ease, transform 1.5s ease;
-  transform: scale(0.97);
+  min-width: 100%;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transform: scale(0.98);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .testimonial-item.active {
   opacity: 1;
   transform: scale(1);
 }
 .testimonial-box {
-  background: #fff;
-  border: 1.5px solid rgba(212,175,55,0.35);
+  background: #fffefc;
+  border: 1px solid rgba(212,175,55,0.25);
   border-radius: 16px;
   padding: 50px 40px 60px;
   margin: 0 auto;
@@ -183,14 +186,16 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 .testimonial-text {
+  color: #4A4A3D;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 1.8;
   margin-bottom: 25px;
+  text-shadow: none;
 }
 .testimonial-author {
+  color: #7a5b91;
   font-weight: 600;
-  color: var(--color-lavande);
 }
 .quote-symbol {
   font-size: 3.5rem;
@@ -208,7 +213,7 @@ body {
 .indicator.active { opacity:1; transform:scale(1.2); }
 
 /* ========================================== */
-/* 🌿 CALL TO ACTION – NOUVELLE VERSION */
+/* 🌿 CALL TO ACTION */
 /* ========================================== */
 .call-to-action {
   text-align: center;
@@ -264,13 +269,13 @@ body {
 }
 
 /* ========================================== */
-/* 💌 FOOTER MODERNISÉ */
+/* 💌 FOOTER LISIBLE ET HARMONIEUX */
 /* ========================================== */
 .footer {
+  background-color: #f9f7f3;
   text-align: center;
   padding: 40px 20px;
-  background-color: #fdfaf6;
-  color: #6b5a4d;
+  color: #4A4A3D;
 }
 .footer-separator {
   width: 60%;
@@ -280,19 +285,21 @@ body {
   background: linear-gradient(to right, transparent, #d2b48c, transparent);
 }
 .social-links a {
-  color: var(--color-lavande);
-  font-size: 1.4rem;
+  color: #7a5b91;
+  font-size: 1.5rem;
   margin: 0 15px;
-  transition: color .3s ease, transform .3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 .social-links a:hover {
-  color: var(--color-sauge);
+  color: #7DA07C;
   transform: scale(1.1);
 }
 .footer-copy {
   margin-top: 15px;
   font-size: 0.95rem;
-  opacity: 0.85;
+  color: #4A4A3D;
+  opacity: 0.9;
+  letter-spacing: 0.3px;
 }
 
 /* ========================================== */

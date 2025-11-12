@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="Soins énergétiques Reiki, Lahochi et Merkabah – équilibre du corps et de l’esprit.">
   <meta name="twitter:image" content="https://energie-de-l-aum.netlify.app/images/hero-aurores-boreales.jpg">
 
-  <!-- ✨ STYLE -->
+  <!-- ✨ STYLES -->
   <link rel="preload" href="style.min.css" as="style">
   <link rel="stylesheet" href="style.min.css" media="all">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
@@ -87,7 +87,7 @@
   <!-- 🌸 HERO -->
   <section class="hero reveal">
     <div class="hero-content">
-      <h1 class="fade-gold">ÉNERGIE DE L’AUM</h1>
+      <h1>ÉNERGIE DE L’AUM</h1>
       <p class="intro">Bienvenue dans un espace où l’énergie circule, la lumière apaise et l’âme s’équilibre.</p>
       <p class="slogan">Un espace pour réaccorder le corps, l’âme et l’esprit — là où la sérénité reprend sa place.</p>
       <a href="planning.html" class="btn btn-gold">VOIR LE PLANNING ET RÉSERVER</a>
@@ -144,37 +144,42 @@
     </div>
   </section>
 
-  <!-- 🌸 SECTION TÉMOIGNAGES -->
+  <!-- 💬 TÉMOIGNAGES -->
   <section class="testimonial-section fade-section reveal">
     <div class="content-wrapper">
       <h2 class="section-title">Ils nous font confiance</h2>
-      <div class="testimonial-carousel">
-        <div class="testimonial-item active">
-          <div class="testimonial-box">
-            <div class="quote-symbol">❝</div>
-            <p class="testimonial-text">
-              Énergie de l’Aum a dépassé toutes mes attentes ! Dès que j’ai franchi la porte, une sensation de paix m’a envahie. 
-              Le soin Reiki que j’ai reçu a été véritablement transformateur, me laissant complètement revitalisée.
-            </p>
-            <div class="testimonial-author-block">
-              <img src="images/clients/sarah.jpg" alt="Photo de Sarah Holland" class="author-photo">
-              <p class="testimonial-author">Sarah Holland</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="testimonial-item">
-          <div class="testimonial-box">
-            <div class="quote-symbol">❝</div>
-            <p class="testimonial-text">
-              J’ai visité de nombreux centres de bien-être, mais Énergie de l’Aum se distingue comme exceptionnel. 
-              Le soin énergétique que j’ai reçu était parfaitement adapté à mes besoins et m’a laissé une sensation de bien-être durable.
-            </p>
-            <div class="testimonial-author-block">
-              <img src="images/clients/david.jpg" alt="Photo de David Watson" class="author-photo">
-              <p class="testimonial-author">David Watson</p>
+      <div class="testimonial-carousel">
+        <div class="carousel-track">
+
+          <div class="testimonial-item active">
+            <div class="testimonial-box">
+              <div class="quote-symbol">❝</div>
+              <p class="testimonial-text">
+                Énergie de l’Aum a dépassé toutes mes attentes ! Dès que j’ai franchi la porte, une sensation de paix m’a envahie. 
+                Le soin Reiki que j’ai reçu a été véritablement transformateur, me laissant complètement revitalisée.
+              </p>
+              <div class="testimonial-author-block">
+                <img src="images/clients/sarah.jpg" alt="Photo de Sarah Holland" class="author-photo">
+                <p class="testimonial-author">Sarah Holland</p>
+              </div>
             </div>
           </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-box">
+              <div class="quote-symbol">❝</div>
+              <p class="testimonial-text">
+                J’ai visité de nombreux centres de bien-être, mais Énergie de l’Aum se distingue comme exceptionnel. 
+                Le soin énergétique que j’ai reçu était parfaitement adapté à mes besoins et m’a laissé une sensation de bien-être durable.
+              </p>
+              <div class="testimonial-author-block">
+                <img src="images/clients/david.jpg" alt="Photo de David Watson" class="author-photo">
+                <p class="testimonial-author">David Watson</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="carousel-indicators">
@@ -211,7 +216,6 @@
   </footer>
 
   <!-- 🌌 FOND ANIMÉ -->
-  <div class="animated-background"></div>
   <div class="light-orbs">
     <div class="orb" style="left:2%;animation-delay:0s;"></div>
     <div class="orb" style="left:8%;animation-delay:4s;"></div>
@@ -222,43 +226,46 @@
 
   <!-- 🌿 SCRIPTS -->
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav ul');
-    if (hamburger && navMenu) {
-      hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('open');
-      });
-    }
+  // --- Menu hamburger ---
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav ul');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  }
 
-    const fadeElements = document.querySelectorAll('.fade-section, .reveal');
-    const appearOnScroll = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    fadeElements.forEach(el => appearOnScroll.observe(el));
+  // --- Apparition douce au scroll ---
+  const fadeElements = document.querySelectorAll('.fade-section, .reveal');
+  const appearOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  fadeElements.forEach(el => appearOnScroll.observe(el));
   </script>
 
+  <!-- 🌸 SCRIPT CARROUSEL FINAL -->
   <script>
-    const testimonials = document.querySelectorAll('.testimonial-item');
-    const indicators = document.querySelectorAll('.indicator');
-    const carousel = document.querySelector('.testimonial-carousel');
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".carousel-track");
+    const items = Array.from(document.querySelectorAll(".testimonial-item"));
+    const indicators = Array.from(document.querySelectorAll(".indicator"));
     let index = 0;
     let interval;
 
     function showSlide(i) {
-      testimonials.forEach((t, idx) => {
-        t.classList.toggle('active', idx === i);
-        indicators[idx].classList.toggle('active', idx === i);
-      });
+      track.style.transform = `translateX(-${i * 100}%)`;
+      items.forEach((item, idx) => item.classList.toggle("active", idx === i));
+      indicators.forEach((ind, idx) => ind.classList.toggle("active", idx === i));
     }
 
     function startCarousel() {
       interval = setInterval(() => {
-        index = (index + 1) % testimonials.length;
+        index = (index + 1) % items.length;
         showSlide(index);
-      }, 15000);
+      }, 10000);
     }
 
     function stopCarousel() {
@@ -266,16 +273,19 @@
     }
 
     indicators.forEach((ind, i) => {
-      ind.addEventListener('click', () => {
+      ind.addEventListener("click", () => {
         index = i;
         showSlide(index);
       });
     });
 
-    carousel.addEventListener('mouseenter', stopCarousel);
-    carousel.addEventListener('mouseleave', startCarousel);
-
-    startCarousel();
+    const carousel = document.querySelector(".testimonial-carousel");
+    if (carousel) {
+      carousel.addEventListener("mouseenter", stopCarousel);
+      carousel.addEventListener("mouseleave", startCarousel);
+      startCarousel();
+    }
+  });
   </script>
 
 </body>
