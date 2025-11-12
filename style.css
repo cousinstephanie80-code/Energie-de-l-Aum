@@ -4,19 +4,19 @@
 
 /* 🎨 Palette harmonieuse */
 :root {
-  --color-lin: #F7F5ED;         /* fond crème apaisant */
-  --color-sauge: #C9D6C2;       /* vert tendre équilibrant */
-  --color-lavande: #CBBED6;     /* lavande pastel */
-  --color-or: #D4AF37;          /* doré lumineux pour accents */
-  --color-olive: #5E6A4D;       /* vert naturel pour textes */
-  --color-menthe: #A8DCC1;      /* accent léger (boutons, liens) */
-
+  --color-lin: #F7F5ED;
+  --color-sauge: #7DA07C;        /* sauge profonde */
+  --color-sauge-hover: #6B916A;
+  --color-lavande: #A48DBA;      /* lavande plus soutenue */
+  --color-lavande-clair: #CBBED6;
+  --color-or: #D4AF37;
+  --color-olive: #5E6A4D;
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Lato', sans-serif;
 }
 
 /* ========================================== */
-/* 🌿 1. BASE GLOBALE */
+/* 🌿 BASE GLOBALE */
 /* ========================================== */
 body {
   margin: 0;
@@ -29,26 +29,10 @@ body {
 }
 
 /* ========================================== */
-/* 🕊️ 2. TEXTES ET TITRES */
-/* ========================================== */
-h1, h2, h3 {
-  font-family: var(--font-serif);
-  color: var(--color-lavande);
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
-p, a {
-  font-family: var(--font-sans);
-  color: var(--color-olive);
-  text-decoration: none;
-}
-
-/* ========================================== */
-/* 💫 3. HEADER */
+/* 💫 HEADER + NAV */
 /* ========================================== */
 .header {
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.85);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
@@ -60,9 +44,7 @@ p, a {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.logo-img {
-  height: 50px;
-}
+.logo-img { height: 50px; }
 
 .nav ul {
   list-style: none;
@@ -82,25 +64,20 @@ p, a {
   color: var(--color-or);
 }
 
-/* 🍔 MENU HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
 }
-
 .hamburger span {
-  width: 25px;
-  height: 3px;
+  width: 25px; height: 3px;
   background-color: var(--color-olive);
   transition: all 0.4s;
 }
-
-.hamburger.open span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
-
+.hamburger.open span:nth-child(1){ transform: rotate(45deg) translateY(8px);}
+.hamburger.open span:nth-child(2){ opacity: 0;}
+.hamburger.open span:nth-child(3){ transform: rotate(-45deg) translateY(-8px);}
 .nav ul.active {
   display: flex;
   flex-direction: column;
@@ -114,13 +91,11 @@ p, a {
 }
 
 /* ========================================== */
-/* 🌸 4. HERO */
+/* 🌸 HERO */
 /* ========================================== */
 .hero {
   height: 90vh;
-  background-image: url('images/hero-aurores-boreales.jpg');
-  background-size: cover;
-  background-position: center;
+  background: url('images/hero-aurores-boreales.jpg') center/cover no-repeat;
   position: relative;
   text-align: center;
   display: flex;
@@ -128,518 +103,258 @@ p, a {
   align-items: center;
   color: white;
 }
-
 .hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  content:"";
+  position:absolute; inset:0;
   background: rgba(155,135,175,0.4);
 }
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-  max-width: 700px;
-}
-
-.hero h1 {
-  font-size: 3.2rem;
-  color: var(--color-lin);
-}
+.hero-content { position:relative; z-index:10; max-width:700px; }
+.hero h1 { font-size:3.2rem; color:var(--color-lin); }
 
 /* ========================================== */
-/* 💎 5. CARTES SERVICES */
+/* 💎 CARTES SERVICES */
 /* ========================================== */
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin: 80px 0;
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:40px; margin:80px 0;
 }
-
 .service-card {
-  width: 320px;
-  height: 420px;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-  box-shadow: 0 8px 22px rgba(80, 80, 80, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width:320px; height:420px; border-radius:16px; overflow:hidden;
+  background:#fff; box-shadow:0 8px 22px rgba(0,0,0,0.1);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
-
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(80, 80, 80, 0.15);
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.15);
 }
-
 .card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(203,190,214,0.4), rgba(255,255,255,0.2));
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: white;
+  position:absolute; inset:0;
+  background:linear-gradient(to top,rgba(203,190,214,0.4),rgba(255,255,255,0.2));
+  padding:40px; display:flex; flex-direction:column; justify-content:flex-end;
 }
-
-.card-overlay h3 {
-  color: var(--color-lavande);
-  text-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
-.card-overlay p {
-  font-size: 1.05rem;
-  text-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-
-.card-reiki { background: url('images/services/reiki-cristaux.jpg') center/cover; }
-.card-lahochi { background: url('images/services/lahochi-sentier-foret.jpg') center/cover; }
-.card-merkabah { background: url('images/services/merkabah-geometrie.jpg') center/cover; }
+.card-overlay h3{color:var(--color-lavande);}
+.card-overlay p{font-size:1.05rem;}
+.card-reiki{background:url('images/services/reiki-cristaux.jpg')center/cover;}
+.card-lahochi{background:url('images/services/lahochi-sentier-foret.jpg')center/cover;}
+.card-merkabah{background:url('images/services/merkabah-geometrie.jpg')center/cover;}
 
 /* ========================================== */
-/* 🌿 SECTION TÉMOIGNAGES FUSIONNÉE */
+/* 💬 TÉMOIGNAGES */
+/* ========================================== */
 .testimonial-section {
-  position: relative;
-  background: linear-gradient(to bottom, #F7F5ED, #E9E3EE);
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.section-title {
-  font-family: var(--font-serif);
-  color: var(--color-olive);
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-/* 💬 SECTION TÉMOIGNAGES – VERSION DOUCE ET HARMONIEUSE */
-:root {
-  --background-light: #F4EDE3; /* 🌿 fond lin légèrement rosé */
-}
-
-/* --- Conteneur principal --- */
-.testimonial-section {
-  position: relative;
-  background: var(--background-light);
+  background: #F4EDE3;
   padding: 90px 20px;
   text-align: center;
-  overflow: hidden;
   border-top: 1px solid rgba(212,175,55,0.15);
   border-bottom: 1px solid rgba(212,175,55,0.15);
 }
-
-/* --- Titre principal --- */
 .section-title {
   font-family: var(--font-serif);
   color: var(--color-olive);
   font-size: 2rem;
   margin-bottom: 45px;
-  text-transform: none;
-  letter-spacing: 0.5px;
 }
-
-/* --- Carrousel principal --- */
 .testimonial-carousel {
   position: relative;
   max-width: 850px;
   margin: 0 auto 60px;
-  overflow: hidden;
 }
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.8s ease-in-out;
-}
-
 .testimonial-item {
-  min-width: 100%;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+  transition: opacity 1.5s ease, transform 1.5s ease;
   transform: scale(0.97);
 }
-
 .testimonial-item.active {
   opacity: 1;
   transform: scale(1);
 }
-
-/* 💬 SECTION TÉMOIGNAGES – VERSION DOUCE ET HARMONIEUSE */
-:root {
-  --background-light: #F4EDE3; /* 🌿 fond lin légèrement rosé */
-}
-
-/* --- Conteneur principal --- */
-.testimonial-section {
-  position: relative;
-  background: var(--background-light);
-  padding: 90px 20px;
-  text-align: center;
-  overflow: hidden;
-  border-top: 1px solid rgba(212,175,55,0.15);
-  border-bottom: 1px solid rgba(212,175,55,0.15);
-}
-
-/* --- Titre principal --- */
-.section-title {
-  font-family: var(--font-serif);
-  color: var(--color-olive);
-  font-size: 2rem;
-  margin-bottom: 45px;
-  text-transform: none;
-  letter-spacing: 0.5px;
-}
-
-/* --- Carrousel principal --- */
-.testimonial-carousel {
-  position: relative;
-  max-width: 850px;
-  margin: 0 auto 60px;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.8s ease-in-out;
-}
-
-.testimonial-item {
-  min-width: 100%;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-  transform: scale(0.97);
-}
-
-.testimonial-item.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* --- Carte de témoignage --- */
 .testimonial-box {
-  background: #FFFFFFE6;
+  background: #fff;
   border: 1.5px solid rgba(212,175,55,0.35);
   border-radius: 16px;
   padding: 50px 40px 60px;
   margin: 0 auto;
   box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  position: relative;
   color: var(--color-olive);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transition: transform .6s ease, box-shadow .6s ease;
 }
-
 .testimonial-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
-
-/* --- Texte & auteur --- */
 .testimonial-text {
   font-style: italic;
-  font-size: 1.25rem;
-  color: var(--color-olive);
+  font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 25px;
 }
-
 .testimonial-author {
   font-weight: 600;
   color: var(--color-lavande);
-  font-size: 1rem;
 }
-
-/* --- Guillemets décoratifs --- */
 .quote-symbol {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--color-or);
+  opacity: 0.25;
   position: absolute;
-  top: 10px;
-  left: 25px;
-  opacity: 0.25;
-  pointer-events: none;
+  top: 15px; left: 25px;
 }
-
-.quote-symbol.end {
-  bottom: 10px;
-  right: 25px;
-  top: auto;
-  left: auto;
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-/* --- Indicateurs du carrousel --- */
-.carousel-indicators {
-  margin-top: 25px;
-}
-
+.carousel-indicators { margin-top: 25px; }
 .indicator {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 6px;
-  border-radius: 50%;
-  background: var(--color-lavande);
-  opacity: 0.4;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  display:inline-block; width:10px; height:10px; margin:0 6px;
+  border-radius:50%; background:var(--color-lavande); opacity:.4;
+  cursor:pointer; transition:all .3s ease;
 }
+.indicator.active { opacity:1; transform:scale(1.2); }
 
-.indicator.active {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-/* --- Zone CTA sous le carrousel --- */
+/* ========================================== */
+/* 🌿 CALL TO ACTION – NOUVELLE VERSION */
+/* ========================================== */
 .call-to-action {
-  margin-top: 50px;
+  text-align: center;
+  background: linear-gradient(to bottom, #faf7f3, #f7f4ef);
+  padding: 80px 20px 60px;
+  border-top: 1px solid rgba(186,153,120,0.2);
 }
-
 .cta-title {
-  color: var(--color-olive);
-  font-size: 1.6rem;
   font-family: var(--font-serif);
-  margin-bottom: 20px;
+  font-size: 2rem;
+  color: var(--color-lavande);
+  margin-bottom: 15px;
+  text-shadow: 0 2px 6px rgba(122,91,145,0.15);
 }
-
 .cta-description {
-  color: var(--color-olive);
-  margin-bottom: 25px;
-  line-height: 1.6;
+  color: #5f5e4d;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
-
-.btn-primary {
-  background-color: var(--color-menthe);
-  color: var(--color-olive);
+.btn-cta {
+  background-color: var(--color-sauge);
+  color: #fff;
   font-weight: 700;
-  text-transform: uppercase;
-  padding: 12px 30px;
-  border-radius: 6px;
-  text-decoration: none;
+  padding: 14px 38px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(125,160,124,0.3);
   transition: all 0.3s ease;
+  text-decoration: none;
   display: inline-block;
 }
-
-.btn-primary:hover {
-  background-color: #b2e4cc;
+.btn-cta:hover {
+  background-color: var(--color-sauge-hover);
   transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(107,145,106,0.4);
 }
-
-.cta-contact a {
-  color: var(--color-lavande);
+.cta-contact {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #5b5a4f;
+}
+.email-link {
+  color: var(--color-sauge);
+  font-weight: 600;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
 }
-
-.cta-contact a:hover {
-  text-decoration: underline;
+.email-link:hover {
+  color: var(--color-sauge-hover);
+  border-bottom: 1px solid var(--color-sauge-hover);
 }
-
 
 /* ========================================== */
-/* 💌 7. CONTACT & FOOTER */
+/* 💌 FOOTER MODERNISÉ */
 /* ========================================== */
-.section-contact {
-  background-color: #F9F8F5;
-  padding: 60px 20px;
-  border-top: 1px solid #E2E0D9;
-  text-align: center;
-}
-
-.contact-mail a {
-  color: var(--color-lavande);
-  text-decoration: none;
-}
-
 .footer {
-  background: rgba(255,255,255,0.8);
   text-align: center;
   padding: 40px 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  background-color: #fdfaf6;
+  color: #6b5a4d;
 }
-
+.footer-separator {
+  width: 60%;
+  margin: 0 auto 25px;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d2b48c, transparent);
+}
 .social-links a {
   color: var(--color-lavande);
-  font-size: 1.8rem;
-  margin: 0 10px;
-  transition: color 0.3s;
+  font-size: 1.4rem;
+  margin: 0 15px;
+  transition: color .3s ease, transform .3s ease;
 }
-
 .social-links a:hover {
-  color: var(--color-or);
+  color: var(--color-sauge);
+  transform: scale(1.1);
+}
+.footer-copy {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  opacity: 0.85;
 }
 
 /* ========================================== */
-/* ✨ 8. BULLES DE LUMIÈRE PASTEL */
+/* ✨ BULLES DE LUMIÈRE */
 /* ========================================== */
-.light-orbs {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-.orb {
-  position: absolute;
-  bottom: -10vh;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
-  opacity: 0.3;
-  animation: rise 40s linear infinite;
-}
-
-.orb:nth-child(3n) { background: radial-gradient(circle, rgba(201,214,194,0.35) 0%, rgba(255,255,255,0) 70%); width: 6px; height: 6px; animation-duration: 55s; }
-.orb:nth-child(4n) { background: radial-gradient(circle, rgba(203,190,214,0.4) 0%, rgba(255,255,255,0) 70%); width: 5px; height: 5px; animation-duration: 50s; }
-.orb:nth-child(5n) { background: radial-gradient(circle, rgba(255,223,166,0.3) 0%, rgba(255,255,255,0) 70%); width: 4px; height: 4px; animation-duration: 60s; }
-
+.light-orbs { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; overflow:hidden; pointer-events:none; mix-blend-mode:screen; }
+.orb { position:absolute; bottom:-10vh; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,0.3)0%,rgba(255,255,255,0)70%); opacity:0.3; animation:rise 40s linear infinite; }
 @keyframes rise {
-  0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-  20% { opacity: 0.4; }
-  50% { transform: translateY(50vh) translateX(20px); opacity: 0.6; }
-  100% { transform: translateY(-20vh) translateX(-20px); opacity: 0; }
+  0%{transform:translateY(100vh);opacity:0;}
+  20%{opacity:.4;}
+  100%{transform:translateY(-20vh);opacity:0;}
 }
 
 /* ========================================== */
-/* 📱 9. RESPONSIVE */
+/* 📱 RESPONSIVE */
 /* ========================================== */
-@media (max-width: 768px) {
-  .cards-container { flex-direction: column; align-items: center; }
-  .nav ul { display: none; }
-  .hamburger { display: flex; }
-  .hero h1 { font-size: 2.3rem; }
+@media (max-width:1024px){
+  .call-to-action{padding:70px 40px 50px;}
+  .cta-title{font-size:1.8rem;}
+  .cta-description{font-size:1rem;}
+  .btn-cta{padding:12px 32px;font-size:0.95rem;}
+  .footer-separator{width:70%;}
+}
+@media (max-width:768px){
+  .hero h1{font-size:2.3rem;}
+  .cards-container{flex-direction:column;align-items:center;}
+  .nav ul{display:none;}
+  .hamburger{display:flex;}
+  .call-to-action{padding:60px 20px 40px;}
+  .cta-title{font-size:1.6rem;}
+  .cta-description{font-size:0.95rem;line-height:1.6;margin-bottom:25px;}
+  .btn-cta{width:100%;max-width:280px;padding:12px 0;font-size:1rem;}
+  .cta-contact{font-size:0.9rem;}
+  .footer{padding:35px 15px;}
+  .footer-separator{width:80%;margin-bottom:20px;}
+  .footer-copy{font-size:0.85rem;}
+}
+@media (max-width:480px){
+  .cta-title{font-size:1.4rem;}
+  .cta-description{font-size:0.9rem;}
+  .btn-cta{font-size:0.9rem;}
+  .cta-contact{font-size:0.85rem;}
+  .footer-copy{font-size:0.8rem;}
 }
 
-/* 🎵 Bouton de musique flottant */
+/* ========================================== */
+/* 🎵 Bouton musique flottant */
+/* ========================================== */
 #music-toggle {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: rgba(255,255,255,0.8);
-  color: #5E6A4D;
+  bottom: 25px; right: 25px;
+  background: rgba(255,255,255,0.8);
+  color: var(--color-olive);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 50px; height: 50px;
+  display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  z-index: 1000;
+  cursor: pointer; z-index: 1000;
   transition: all 0.3s ease;
 }
-
 #music-toggle:hover {
-  background-color: rgba(201,214,194,0.9);
+  background: rgba(201,214,194,0.9);
   transform: scale(1.05);
 }
-
-#music-toggle i {
-  font-size: 1.4rem;
-}
-
-/* ========================================== */
-/* 📱 RESPONSIVE – Témoignages Énergie de l’Aum */
-/* ========================================== */
-
-/* 🌿 Tablette (entre 600 et 1024px) */
-@media (max-width: 1024px) {
-  .testimonial-section {
-    padding: 70px 20px;
-  }
-
-  .testimonial-box {
-    padding: 50px 35px 60px;
-  }
-
-  .testimonial-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
-
-  .testimonial-author-block {
-    justify-content: flex-end;
-  }
-
-  .author-photo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .testimonial-author {
-    font-size: 1rem;
-  }
-}
-
-/* 🌸 Mobile (moins de 600px) */
-@media (max-width: 600px) {
-  .testimonial-section {
-    padding: 60px 18px;
-  }
-
-  .testimonial-box {
-    text-align: center;
-    padding: 45px 25px 55px;
-  }
-
-  .quote-symbol {
-    position: static;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    display: block;
-    opacity: 0.3;
-  }
-
-  .testimonial-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    padding-top: 0;
-  }
-
-  /* Photo et nom centrés sous le texte */
-  .testimonial-author-block {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .author-photo {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    margin-bottom: 5px;
-  }
-
-  .testimonial-author {
-    font-size: 1.05rem;
-    color: var(--color-lavande);
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    margin-bottom: 35px;
-  }
-
-  .cta-title {
-    font-size: 1.3rem;
-  }
-
-  .cta-description {
-    font-size: 0.95rem;
-    margin: 0 auto 20px;
-    max-width: 90%;
-  }
-
-  .btn-primary {
-    padding: 10px 25px;
-    font-size: 0.95rem;
-  }
-}
-
+#music-toggle i { font-size: 1.4rem; }
