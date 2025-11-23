@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Énergie de l’Aum – Équilibre & Sérénité</title>
+
+  <!-- 🌿 FAVICON -->
+  <link rel="icon" type="image/png" href="images/favicon-lotus.png">
+
+  <!-- 🌸 META SEO -->
+  <meta name="description" content="Énergie de l’Aum – Soins énergétiques Reiki, Lahochi et Merkabah, en présentiel ou à distance. Retrouvez équilibre, harmonie et sérénité intérieure grâce à des pratiques douces et lumineuses.">
+  <meta name="keywords" content="Reiki, Lahochi, soins énergétiques, Merkabah, énergie, bien-être, méditation, relaxation, guérison énergétique, chakra, équilibre, sérénité, spiritualité, Énergie de l’Aum, harmonie du corps et de l’esprit">
+  <meta name="author" content="Énergie de l’Aum">
+
+  <!-- 🌞 META OPEN GRAPH -->
+  <meta property="og:title" content="Énergie de l’Aum – Équilibre & Sérénité">
+  <meta property="og:description" content="Soins énergétiques Reiki, Lahochi et Merkabah – retrouvez paix intérieure, équilibre et lumière.">
+  <meta property="og:image" content="https://energie-de-l-aum.netlify.app/images/hero-aurores-boreales.jpg">
+  <meta property="og:url" content="https://energie-de-l-aum.netlify.app">
+  <meta property="og:type" content="website">
+
+  <!-- 🕊 META TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Énergie de l’Aum – Reiki & Harmonie">
+  <meta name="twitter:description" content="Soins énergétiques Reiki, Lahochi et Merkabah – équilibre du corps et de l’esprit.">
+  <meta name="twitter:image" content="https://energie-de-l-aum.netlify.app/images/hero-aurores-boreales.jpg">
+
+  <!-- ✨ STYLES -->
+  <link rel="preload" href="style.min.css" as="style">
+  <link rel="stylesheet" href="style.min.css" media="all">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <!-- 🎨 POLICES & ICONES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 📱 COULEUR DU NAVIGATEUR -->
+  <meta name="theme-color" content="#1A2A3A">
+</head>
+
+<body>
+
+  <!-- 🎶 MUSIQUE D’AMBIANCE -->
+  <audio id="bg-music" src="audio/musique-zen.mp3" loop></audio>
+  <div id="music-toggle" title="Activer / Couper la musique">
+    <i class="fa-solid fa-volume-xmark"></i>
+  </div>
+
+  <script>
+    const bgMusic = document.getElementById('bg-music');
+    const toggleBtn = document.getElementById('music-toggle');
+    let isPlaying = false;
+
+    toggleBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        bgMusic.pause();
+        toggleBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+      } else {
+        bgMusic.play();
+        toggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
+  <!-- 🌿 HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Énergie de l’Aum" class="logo-img">
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services/index.html">Services</a></li>
+        <li><a href="planning.html">Planning & Réservation</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+  </header>
+
+  <!-- 🌸 HERO -->
+  <section class="hero reveal">
+    <div class="hero-content">
+      <h1>ÉNERGIE DE L’AUM</h1>
+      <p class="intro">Bienvenue dans un espace où l’énergie circule, la lumière apaise et l’âme s’équilibre.</p>
+      <p class="slogan">Un espace pour réaccorder le corps, l’âme et l’esprit — là où la sérénité reprend sa place.</p>
+      <a href="planning.html" class="btn btn-gold">VOIR LE PLANNING ET RÉSERVER</a>
+    </div>
+  </section>
+
+  <!-- 🌿 SECTION MISSION -->
+  <section class="section-mission reveal">
+    <div class="container fade-section">
+      <h2>Notre Mission : L’harmonie du corps et de l’esprit</h2>
+      <p class="mission-text">
+        Chez Énergie de l’Aum, chaque soin est une rencontre avec soi-même. Nous unissons les traditions énergétiques ancestrales (Reiki, Lahochi, Merkabah) à une écoute contemporaine du corps et de l’âme. 
+        Dans une atmosphère douce et lumineuse, laissez-vous guider vers un mieux-être global, durable et profond.
+      </p>
+    </div>
+  </section>
+
+  <!-- ✨ CITATION -->
+  <section class="section-quote fade-section reveal">
+    <blockquote>« L’énergie qui nous traverse est la première médecine de l’âme. »</blockquote>
+  </section>
+
+  <!-- 🌸 SERVICES -->
+  <section class="section-services reveal">
+    <div class="container fade-section">
+      <h2>Nos soins énergétiques</h2>
+      <p class="subtitle">Explorez nos pratiques pour retrouver équilibre, vitalité et clarté intérieure.</p>
+
+      <div class="cards-container">
+        <div class="service-card card-reiki">
+          <div class="card-overlay">
+            <h3>Soins Reiki</h3>
+            <p>Harmonisez vos flux d’énergie et relâchez les tensions. Le Reiki réveille la force vitale et l’équilibre intérieur.</p>
+            <a href="services/reiki.html" class="btn btn-light">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="service-card card-lahochi">
+          <div class="card-overlay">
+            <h3>Lahochi énergétique</h3>
+            <p>Un soin doux et puissant, transmis par les mains, qui favorise l’auto-guérison et la paix intérieure.</p>
+            <a href="services/lahochi.html" class="btn btn-light">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="service-card card-merkabah">
+          <div class="card-overlay">
+            <h3>Rituels de Merkabah</h3>
+            <p>Un voyage énergétique vers la reconnexion spirituelle. Fusionnez lumière, géométrie sacrée et vibration du cœur.</p>
+            <a href="services/merkabah.html" class="btn btn-light">Découvrir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 TÉMOIGNAGES -->
+  <section class="testimonial-section fade-section reveal">
+    <div class="content-wrapper">
+      <h2 class="section-title">Ils nous font confiance</h2>
+
+      <div class="testimonial-carousel">
+        <div class="carousel-track">
+
+          <div class="testimonial-item active">
+            <div class="testimonial-box">
+              <div class="quote-symbol">❝</div>
+              <p class="testimonial-text">
+                Énergie de l’Aum a dépassé toutes mes attentes ! Dès que j’ai franchi la porte, une sensation de paix m’a envahie. 
+                Le soin Reiki que j’ai reçu a été véritablement transformateur, me laissant complètement revitalisée.
+              </p>
+              <div class="testimonial-author-block">
+                <img src="images/clients/sarah.jpg" alt="Photo de Sarah Holland" class="author-photo">
+                <p class="testimonial-author">Sarah Holland</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item">
+            <div class="testimonial-box">
+              <div class="quote-symbol">❝</div>
+              <p class="testimonial-text">
+                J’ai visité de nombreux centres de bien-être, mais Énergie de l’Aum se distingue comme exceptionnel. 
+                Le soin énergétique que j’ai reçu était parfaitement adapté à mes besoins et m’a laissé une sensation de bien-être durable.
+              </p>
+              <div class="testimonial-author-block">
+                <img src="images/clients/david.jpg" alt="Photo de David Watson" class="author-photo">
+                <p class="testimonial-author">David Watson</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="carousel-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌿 CALL TO ACTION -->
+  <section class="call-to-action reveal">
+    <h3 class="cta-title">Besoin d’un moment pour vous&nbsp;?</h3>
+    <p class="cta-description">
+      Laissez-vous guider vers votre prochain soin énergétique.<br>
+      Prenez rendez-vous dès aujourd’hui.
+    </p>
+    <a href="planning.html" class="btn-cta">PRENDRE RENDEZ-VOUS</a>
+    <p class="cta-contact">
+      ou écrivez-nous :
+      <a href="mailto:energie.aum@gmail.com" class="email-link">energie.aum@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- 🌸 FOOTER -->
+  <footer class="footer reveal">
+    <hr class="footer-separator">
+    <div class="social-links">
+      <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    <p class="footer-copy">© 2025 ÉNERGIE DE L’AUM – Tous droits réservés.</p>
+  </footer>
+
+  <!-- 🌌 FOND ANIMÉ -->
+  <div class="light-orbs">
+    <div class="orb" style="left:2%;animation-delay:0s;"></div>
+    <div class="orb" style="left:8%;animation-delay:4s;"></div>
+    <div class="orb" style="left:12%;animation-delay:9s;"></div>
+    <div class="orb" style="left:16%;animation-delay:2s;"></div>
+    <div class="orb" style="left:22%;animation-delay:7s;"></div>
+  </div>
+
+  <!-- 🌿 SCRIPTS -->
+  <script>
+  // --- Menu hamburger ---
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav ul');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  }
+
+  // --- Apparition douce au scroll ---
+  const fadeElements = document.querySelectorAll('.fade-section, .reveal');
+  const appearOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  fadeElements.forEach(el => appearOnScroll.observe(el));
+  </script>
+
+  <!-- 🌸 SCRIPT CARROUSEL FINAL -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".carousel-track");
+    const items = Array.from(document.querySelectorAll(".testimonial-item"));
+    const indicators = Array.from(document.querySelectorAll(".indicator"));
+    let index = 0;
+    let interval;
+
+    function showSlide(i) {
+      track.style.transform = `translateX(-${i * 100}%)`;
+      items.forEach((item, idx) => item.classList.toggle("active", idx === i));
+      indicators.forEach((ind, idx) => ind.classList.toggle("active", idx === i));
+    }
+
+    function startCarousel() {
+      interval = setInterval(() => {
+        index = (index + 1) % items.length;
+        showSlide(index);
+      }, 10000);
+    }
+
+    function stopCarousel() {
+      clearInterval(interval);
+    }
+
+    indicators.forEach((ind, i) => {
+      ind.addEventListener("click", () => {
+        index = i;
+        showSlide(index);
+      });
+    });
+
+    const carousel = document.querySelector(".testimonial-carousel");
+    if (carousel) {
+      carousel.addEventListener("mouseenter", stopCarousel);
+      carousel.addEventListener("mouseleave", startCarousel);
+      startCarousel();
+    }
+  });
+  </script>
+
+</body>
+</html>
