@@ -1,182 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      margin: 0;
-      padding: 15px;
-      font-family: 'Lato', sans-serif;
-      background: #f7f0e8;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda – Énergie de l’Aum</title>
+<style>
+ body {
+   margin:0;
+   padding:0;
+   font-family:'Lato', sans-serif;
+   background:#f7f0e8;
+   color:#6a4b3c;
+   text-align:center;
+ }
+ .banner{
+   background:#e8d5cc;
+   padding:30px 20px;
+   font-family:'Cormorant Garamond', serif;
+   font-size:32px;
+ }
+ .subtitle{
+   margin-top:10px;
+   font-size:18px;
+   opacity:0.8;
+ }
+ .container{
+   max-width:1000px;
+   margin:30px auto;
+   padding:0 20px;
+ }
+ iframe{
+   width:100%;
+   border:0;
+   border-radius:20px;
+   min-height:1200px;
+ }
+</style>
+</head>
+<body>
+ <div class="banner">Agenda – Énergie de l’Aum</div>
+ <div class="subtitle">Visualisation des disponibilités de la semaine</div>
 
-    .week-title {
-      text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      margin-bottom: 20px;
-      color: #6a4b3c;
-    }
+ <div class="container">
+   <iframe src="https://script.google.com/macros/s/AKfycby0ippYFpNtNJOxrMlsyo0kS1xB0kkc3ybDBzi5Auk8ejwcOjvSoc1GV1efywYSknOO/exec"></iframe>
+ </div>
+</body><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda – Énergie de l’Aum</title>
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 10px;
-    }
+<style>
+ body {
+   margin:0;
+   padding:0;
+   font-family:'Lato', sans-serif;
+   background:#f7f0e8;
+   color:#6a4b3c;
+   text-align:center;
+ }
 
-    .day {
-      background: white;
-      border-radius: 12px;
-      padding: 12px;
-      text-align: center;
-      min-height: 140px;
-      font-size: 15px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    }
+ .banner{
+   background:#e8d5cc;
+   padding:30px 20px;
+   font-family:'Cormorant Garamond', serif;
+   font-size:32px;
+ }
 
-    .day:not(.active) {
-      opacity: 0.45;
-    }
+ .subtitle{
+   margin-top:10px;
+   font-size:18px;
+   opacity:0.8;
+ }
 
-    .day-title {
-      font-weight: bold;
-      font-family: 'Cormorant Garamond', serif;
-      margin-bottom: 10px;
-      color: #6a4b3c;
-    }
+ .container{
+   max-width:1000px;
+   margin:30px auto;
+   padding:0 20px;
+ }
 
-    .slot {
-      background: #f5e9f0;
-      border-left: 4px solid #c597c1;
-      padding: 6px;
-      border-radius: 8px;
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
+ iframe{
+   width:100%;
+   border:0;
+   border-radius:20px;
+   min-height:1200px; /* PC/Tablette */
+ }
 
-    .nav {
-      margin-top: 25px;
-      text-align: center;
-    }
+ /* 🔥 Correction smartphone */
+ @media (max-width:600px){
+   iframe{
+     min-height:900px;     /* hauteur réduite */
+     border-radius:15px;
+   }
 
-    .btn {
-      padding: 8px 15px;
-      border-radius: 10px;
-      border: 1px solid #c597c1;
-      background: white;
-      color: #c597c1;
-      cursor: pointer;
-      font-size: 15px;
-      margin: 0 5px;
-    }
+   .banner{
+     font-size:24px;
+     padding:20px 10px;
+   }
 
-    @media(max-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media(max-width: 600px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+   .subtitle{
+     font-size:16px;
+   }
+ }
+</style>
 </head>
 
 <body>
+ <div class="banner">Agenda – Énergie de l’Aum</div>
+ <div class="subtitle">Visualisation des disponibilités de la semaine</div>
 
-  <h2 class="week-title" id="weekTitle"></h2>
+ <div class="container">
+   <iframe src="https://script.google.com/macros/s/AKfycby0ippYFpNtNJOxrMlsyo0kS1xB0kkc3ybDBzi5Auk8ejwcOjvSoc1GV1efywYSknOO/exec"></iframe>
+ </div>
 
-  <div class="grid" id="grid"></div>
-
-  <div class="nav">
-    <button class="btn" onclick="changeWeek(-1)">← Semaine précédente</button>
-    <button class="btn" onclick="changeWeek(1)">Semaine suivante →</button>
-  </div>
-
-  <script>
-    let currentWeekOffset = 0;
-
-    const DAYS = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
-    const WORKING_DAYS = [true, false, true, false, true, true];
-
-    const SLOTS = {
-      "Lun": ["13h30", "14h30"],
-      "Mar": [],
-      "Mer": ["18h30", "19h30"],
-      "Jeu": [],
-      "Ven": ["12h30", "13h30", "14h30"],
-      "Sam": ["09h00", "10h00", "11h00", "12h00"]
-    };
-
-    function getMonday(d) {
-      d = new Date(d);
-      var day = d.getDay(),
-      diff = d.getDate() - day + (day === 0 ? -6 : 1);
-      return new Date(d.setDate(diff));
-    }
-
-    function formatDate(date) {
-      return date.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
-    }
-
-    function renderWeek() {
-      let today = new Date();
-      let monday = getMonday(today);
-      monday.setDate(monday.getDate() + currentWeekOffset * 7);
-
-      let titleEnd = new Date(monday);
-      titleEnd.setDate(monday.getDate() + 5);
-
-      document.getElementById("weekTitle").innerText =
-        `Semaine du ${formatDate(monday)} au ${formatDate(titleEnd)}`;
-
-      let grid = document.getElementById("grid");
-      grid.innerHTML = "";
-
-      for (let i = 0; i < 6; i++) {
-        let dayName = DAYS[i];
-        let isWorking = WORKING_DAYS[i];
-
-        let dayDiv = document.createElement("div");
-        dayDiv.className = "day " + (isWorking ? "active" : "inactive");
-
-        let d = new Date(monday);
-        d.setDate(monday.getDate() + i);
-        let formatted = d.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
-
-        dayDiv.innerHTML = `<div class="day-title">${formatted}</div>`;
-
-        let slots = SLOTS[dayName];
-        if (slots.length === 0) {
-          dayDiv.innerHTML += `<div class="slot" style="opacity:0.4;">—</div>`;
-        } else {
-          slots.forEach(s => {
-            dayDiv.innerHTML += `<div class="slot">${s}</div>`;
-          });
-        }
-
-        grid.appendChild(dayDiv);
-      }
-
-      sendHeight();
-    }
-
-    function changeWeek(delta) {
-      currentWeekOffset += delta;
-      renderWeek();
-    }
-
-    function sendHeight() {
-      const height = document.body.scrollHeight;
-      window.parent.postMessage({ type: "setHeight", value: height }, "*");
-    }
-
-    window.onload = renderWeek;
-    window.onresize = sendHeight;
-
-  </script>
 </body>
+</html>
+
 </html>
